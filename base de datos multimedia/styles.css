@@ -538,11 +538,11 @@ body{
 .timeline::before {
   content: '';
   position: absolute;
-  top: 0;
+  top: 65px;
   left: 50%;
   transform: translateX(-50%);
   width: 4px;
-  height: 100%;
+  height: 97%;
   background: linear-gradient(180deg, var(--primary), var(--accent), var(--hot));
   border-radius: 2px;
   box-shadow: 0 0 20px rgba(124, 255, 107, 0.3);
@@ -824,4 +824,22 @@ input:checked + .slider::after{left:22px}
 .back-to-top.show {
   opacity: 1;
   visibility: visible;
+}
+
+
+.number-input {
+  background: #0c0f14;
+  border: 1px solid rgba(255,255,255,.1);
+  color: var(--txt);
+  padding: 0.7rem 0.8rem;
+  border-radius: 12px;
+  outline: none;
+  font-family: inherit;
+  width: 100%;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.number-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 8px rgba(124, 255, 107, 0.4);
 }

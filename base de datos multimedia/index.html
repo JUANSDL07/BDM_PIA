@@ -373,7 +373,7 @@
         <div style="display: flex; gap: 1rem; align-items: end;">
           <div style="flex: 1;">
             <label for="post-id-input">ID de publicación</label>
-            <input type="number" id="post-id-input" placeholder="Ej: 1, 2, 3..." min="1">
+            <input type="number" id="post-id-input" class="number-input" placeholder="Ej: 1, 2, 3..." min="1">
           </div>
           <button class="btn btn--primary" id="view-individual-post">Ver Publicación</button>
         </div>
@@ -495,10 +495,10 @@
       <div id="register-form" class="form">
         <div class="form__row">
           <label>Nombre completo
-            <input type="text" id="r-name" required>
+            <input type="text" id="r-name" required placeholder="Nombre completo">
           </label>
           <label>Correo electrónico
-            <input type="email" id="r-email" required>
+            <input type="email" id="r-email" required placeholder="Correo electrónico">
           </label>
         </div>
 
@@ -519,10 +519,10 @@
 
         <div class="form__row">
           <label>País de nacimiento
-            <input type="text" id="r-birth-country" required>
+            <input type="text" id="r-birth-country" required placeholder="País de nacimiento">
           </label>
           <label>Nacionalidad
-            <input type="text" id="r-nationality" required>
+            <input type="text" id="r-nationality" required placeholder="Nacionalidad">
           </label>
         </div>
 
@@ -531,7 +531,7 @@
             <input type="url" id="r-photo" placeholder="https://…">
           </label>
           <label>Contraseña
-            <input type="password" id="r-pass" required minlength="6">
+            <input type="password" id="r-pass" required minlength="6" placeholder="password">
           </label>
         </div>
 
@@ -544,10 +544,10 @@
       <!-- Login -->
       <div id="login-form" class="form is-hidden">
         <label>Correo electrónico
-          <input type="email" id="l-email" required>
+          <input type="email" id="l-email" required placeholder="Correo electrónico">
         </label>
         <label>Contraseña
-          <input type="password" id="l-pass" required>
+          <input type="password" id="l-pass" required placeholder="password">
         </label>
         <div class="form__actions">
           <button type="button" class="btn btn--primary" id="btn-login">Ingresar</button>
