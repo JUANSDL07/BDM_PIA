@@ -794,3 +794,34 @@ input:checked + .slider::after{left:22px}
   .featured-header{flex-direction:column;align-items:flex-start;gap:1rem}
   .ticket-cards{grid-template-columns:1fr}
 }
+
+/*///////////////////////////*/
+/*flechita hacia arriba*/
+/*///////////////////////////*/
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 100;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}

@@ -791,3 +791,25 @@ window.logout = function() {
   localStorage.removeItem('currentUser');
   location.reload();
 };
+
+
+/*///////////////////////////*/
+/*flechita hacia arriba*/
+/*///////////////////////////*/
+
+const backToTopBtn = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) { // aparece después de hacer un poco de scroll
+    backToTopBtn.classList.add('show');
+  } else {
+    backToTopBtn.classList.remove('show');
+  }
+});
+
+backToTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
