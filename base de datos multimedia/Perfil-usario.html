@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi Perfil • Mundiales</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Soccerball.svg/120px-Soccerball.svg.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="perfil.css">
+</head>
+<body>
+  <!-- Barra superior -->
+  <header class="nav">
+    <div class="nav__inner container">
+      <a class="brand" href="index.html">
+        <span class="brand__logo">⚽</span>
+        <span class="brand__text">Mundiales</span>
+      </a>
+
+      <button class="nav__toggle" id="nav-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav class="nav__links" id="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#mundiales">Mundiales</a>
+        <a href="index.html#publicaciones">Publicaciones</a>
+        <a href="index.html#estadios">Estadios</a>
+        <a href="index.html#jugadores">Jugadores</a>
+        <a href="perfil.html" class="active">Mi Perfil</a>
+      </nav>
+
+      <div class="nav__actions">
+        <span style="padding: 0.4rem 0.6rem; background: #1a1c24; border-radius: 999px; border: 1px solid rgba(255,255,255,.06);">
+          Luis Ramos
+        </span>
+        <a href="index.html" class="btn btn--ghost">Salir</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Header del Perfil -->
+  <section class="profile-header">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: center;">
+        <div style="text-align: center;">
+          <img src="/Imagenes/1.jpg" 
+               alt="Avatar" class="profile-avatar">
+          <button class="btn btn--ghost btn--sm" onclick="alert('Funcionalidad de cambiar avatar - Demo')">
+            <i class="fas fa-camera"></i> Cambiar
+          </button>
+        </div>
+        
+        <div>
+          <h1 style="color: white; margin: 0 0 0.5rem 0;">Luis Ramos</h1>
+          <p style="color: rgba(255, 255, 255, 0.8); margin: 0 0 1rem 0;">prubea1@outlook.com</p>
+          <p style="color: rgba(255, 255, 255, 0.9); margin: 0;">Apasionado del fútbol y la historia de los mundiales. Amante del buen juego y las jugadas épicas.</p>
+        </div>
+      </div>
+
+      <!-- Estadísticas -->
+      <div class="profile-stats">
+        <div class="stat-card">
+          <span class="stat-number">8</span>
+          <span class="stat-label">Publicaciones</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">347</span>
+          <span class="stat-label">Likes Recibidos</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">89</span>
+          <span class="stat-label">Comentarios</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">2.1k</span>
+          <span class="stat-label">Vistas Totales</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenido Principal -->
+  <main class="container">
+    <!-- Pestañas -->
+    <div class="profile-tabs">
+      <button class="profile-tab active" onclick="switchTab('publicaciones')">Mis Publicaciones</button>
+      <button class="profile-tab" onclick="switchTab('interacciones')">Interacciones</button>
+      <button class="profile-tab" onclick="switchTab('editar')">Editar Perfil</button>
+      <button class="profile-tab" onclick="switchTab('seguridad')">Seguridad</button>
+    </div>
+
+    <!-- Pestaña: Mis Publicaciones -->
+    <div id="tab-publicaciones" class="tab-content active">
+      <div class="section__head">
+        <h2>Mis Publicaciones</h2>
+        <p class="muted">Gestiona y visualiza el rendimiento de tus publicaciones</p>
+      </div>
+
+      <div class="filters">
+        <div class="filters__group">
+          <label for="filter-status">Estado</label>
+          <select id="filter-status" onchange="applyPostFilters()">
+            <option value="all">Todas</option>
+            <option value="approved">Aprobadas</option>
+            <option value="pending">Pendientes</option>
+            <option value="rejected">Rechazadas</option>
+          </select>
+        </div>
+        <div class="filters__group">
+          <label for="filter-sort">Ordenar por</label>
+          <select id="filter-sort" onchange="applyPostFilters()">
+            <option value="newest">Más recientes</option>
+            <option value="oldest">Más antiguas</option>
+            <option value="popular">Más populares</option>
+            <option value="views">Más vistas</option>
+          </select>
+        </div>
+        <div class="filters__group filters__actions">
+          <button type="button" class="btn btn--primary" onclick="applyPostFilters()">Aplicar</button>
+        </div>
+      </div>
+
+      <div class="masonry">
+        <!-- Publicación 1 -->
+        <article class="user-post">
+          <div class="post__media">
+            <img src="/Imagenes/Futbol.jpg" alt="Final 2014">
+          </div>
+          <div class="post__body">
+            <h4>El Gol de Gotze que hizo historia</h4>
+            <p class="muted">Partidos • Brasil 2014 • 15 Mar 2024</p>
+            <p style="margin: 0.5rem 0; line-height: 1.4;">Análisis detallado del gol que le dio a Alemania su cuarto título mundial en la prórroga contra Argentina.</p>
+            
+            <div style="display: flex; gap: 1.5rem; margin-top: 1rem; font-size: 0.9rem;">
+              <span><i class="fas fa-heart" style="color: var(--hot);"></i> 124 likes</span>
+              <span><i class="fas fa-comment" style="color: var(--accent);"></i> 23 comentarios</span>
+              <span><i class="fas fa-eye" style="color: var(--muted);"></i> 456 vistas</span>
+            </div>
+            
+            <span style="background: rgba(124, 255, 107, 0.2); color: var(--primary); padding: 0.2rem 0.5rem; border-radius: 8px; font-size: 0.75rem; display: inline-block; margin-top: 0.5rem;">
+              ✅ Aprobada
+            </span>
+          </div>
+          <footer class="post__footer">
+            <button class="btn btn--sm btn--ghost" onclick="alert('Editar publicación - Demo')">
+              <i class="fas fa-edit"></i> Editar
+            </button>
+            <button class="btn btn--sm btn--danger" onclick="alert('Eliminar publicación - Demo')">
+              <i class="fas fa-trash"></i> Eliminar
+            </button>
+          </footer>
+        </article>
+
+        <!-- Publicación 2 -->
+        <article class="user-post">
+          <div class="post__media">
+            <img src="/Imagenes/Futbol.jpg" alt="Maradona 1986">
+          </div>
+          <div class="post__body">
+            <h4>La Mano de Dios: Análisis Completo</h4>
+            <p class="muted">Polémicas • México 1986 • 10 Mar 2024</p>
+            <p style="margin: 0.5rem 0; line-height: 1.4;">Estudio detallado de la jugada más polémica de la historia de los mundiales y su impacto en el fútbol.</p>
+            
+            <div style="display: flex; gap: 1.5rem; margin-top: 1rem; font-size: 0.9rem;">
+              <span><i class="fas fa-heart" style="color: var(--hot);"></i> 89 likes</span>
+              <span><i class="fas fa-comment" style="color: var(--accent);"></i> 34 comentarios</span>
+              <span><i class="fas fa-eye" style="color: var(--muted);"></i> 321 vistas</span>
+            </div>
+            
+            <span style="background: rgba(124, 255, 107, 0.2); color: var(--primary); padding: 0.2rem 0.5rem; border-radius: 8px; font-size: 0.75rem; display: inline-block; margin-top: 0.5rem;">
+              ✅ Aprobada
+            </span>
+          </div>
+          <footer class="post__footer">
+            <button class="btn btn--sm btn--ghost" onclick="alert('Editar publicación - Demo')">
+              <i class="fas fa-edit"></i> Editar
+            </button>
+            <button class="btn btn--sm btn--danger" onclick="alert('Eliminar publicación - Demo')">
+              <i class="fas fa-trash"></i> Eliminar
+            </button>
+          </footer>
+        </article>
+
+        <!-- Publicación 3 (Pendiente) -->
+        <article class="user-post">
+          <div class="post__media">
+            <img src="/Imagenes/Futbol.jpg" alt="Brasil 1970">
+          </div>
+          <div class="post__body">
+            <h4>Brasil 1970: El Equipo Perfecto</h4>
+            <p class="muted">Estadísticas • México 1970 • 8 Mar 2024</p>
+            <p style="margin: 0.5rem 0; line-height: 1.4;">Análisis del equipo brasileño considerado por muchos como el mejor de la historia del fútbol.</p>
+            
+            <div style="display: flex; gap: 1.5rem; margin-top: 1rem; font-size: 0.9rem;">
+              <span><i class="fas fa-heart" style="color: var(--hot);"></i> 67 likes</span>
+              <span><i class="fas fa-comment" style="color: var(--accent);"></i> 12 comentarios</span>
+              <span><i class="fas fa-eye" style="color: var(--muted);"></i> 234 vistas</span>
+            </div>
+            
+            <span style="background: rgba(255, 209, 102, 0.2); color: #f9d27b; padding: 0.2rem 0.5rem; border-radius: 8px; font-size: 0.75rem; display: inline-block; margin-top: 0.5rem;">
+              ⏳ Pendiente de aprobación
+            </span>
+          </div>
+          <footer class="post__footer">
+            <button class="btn btn--sm btn--ghost" onclick="alert('Editar publicación - Demo')">
+              <i class="fas fa-edit"></i> Editar
+            </button>
+            <button class="btn btn--sm btn--danger" onclick="alert('Eliminar publicación - Demo')">
+              <i class="fas fa-trash"></i> Eliminar
+            </button>
+          </footer>
+        </article>
+      </div>
+    </div>
+
+    <!-- Pestaña: Interacciones -->
+    <div id="tab-interacciones" class="tab-content">
+      <div class="section__head">
+        <h2>Interacciones Recientes</h2>
+        <p class="muted">Usuarios que han interactuado con tus publicaciones</p>
+      </div>
+
+      <div>
+        <!-- Interacción 1 -->
+        <div class="interaction-item">
+          <img src="/Imagenes/2.jpg" alt="Ana" class="interaction-avatar">
+          <div style="flex: 1;">
+            <strong>Ana Martínez</strong> ❤️ dio like a <strong>"El Gol de Gotze que hizo historia"</strong>
+            <div style="color: var(--muted); font-size: 0.9rem;">Hace 2 horas</div>
+          </div>
+          <button class="btn btn--sm btn--ghost" onclick="alert('Ver publicación - Demo')">
+            Ver publicación
+          </button>
+        </div>
+
+        <!-- Interacción 2 -->
+        <div class="interaction-item">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" alt="Carlos" class="interaction-avatar">
+          <div style="flex: 1;">
+            <strong>Carlos López</strong> 💬 comentó en <strong>"La Mano de Dios: Análisis Completo"</strong>: "¡Excelente análisis! Muy detallado."
+            <div style="color: var(--muted); font-size: 0.9rem;">Hace 1 día</div>
+          </div>
+          <button class="btn btn--sm btn--ghost" onclick="alert('Ver publicación - Demo')">
+            Ver publicación
+          </button>
+        </div>
+
+        <!-- Interacción 3 -->
+        <div class="interaction-item">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face" alt="María" class="interaction-avatar">
+          <div style="flex: 1;">
+            <strong>María García</strong> ❤️ dio like a <strong>"Brasil 1970: El Equipo Perfecto"</strong>
+            <div style="color: var(--muted); font-size: 0.9rem;">Hace 3 días</div>
+          </div>
+          <button class="btn btn--sm btn--ghost" onclick="alert('Ver publicación - Demo')">
+            Ver publicación
+          </button>
+        </div>
+
+        <!-- Interacción 4 -->
+        <div class="interaction-item">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="Roberto" class="interaction-avatar">
+          <div style="flex: 1;">
+            <strong>Roberto Silva</strong> 💬 comentó en <strong>"El Gol de Gotze que hizo historia"</strong>: "¿Tienes más análisis como este?"
+            <div style="color: var(--muted); font-size: 0.9rem;">Hace 5 días</div>
+          </div>
+          <button class="btn btn--sm btn--ghost" onclick="alert('Ver publicación - Demo')">
+            Ver publicación
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pestaña: Editar Perfil -->
+    <div id="tab-editar" class="tab-content">
+      <div class="section__head">
+        <h2>Editar Perfil</h2>
+        <p class="muted">Actualiza tu información personal</p>
+      </div>
+
+      <form class="form" onsubmit="alert('Perfil actualizado - Demo'); return false;">
+        <div class="form__row">
+          <label>Nombre completo
+            <input type="text" value="Luis Ramos" required>
+          </label>
+          <label>Correo electrónico
+            <input type="email" value="prubea1@outlook.com" required>
+          </label>
+        </div>
+
+        <div class="form__row">
+          <label>Fecha de nacimiento
+            <input type="date" value="2003-05-15" required>
+          </label>
+          <label>Género
+            <select required>
+              <option>Masculino</option>
+              <option>Femenino</option>
+              <option>No binario</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="form__row">
+          <label>País de nacimiento
+            <input type="text" value="México" required>
+          </label>
+          <label>Nacionalidad
+            <input type="text" value="Mexicana" required>
+          </label>
+        </div>
+
+        <label>Biografía
+          <textarea rows="3">Apasionado del fútbol y la historia de los mundiales. Amante del buen juego y las jugadas épicas.</textarea>
+        </label>
+
+        <div class="form__actions">
+          <button type="button" class="btn btn--ghost" onclick="alert('Cambios cancelados - Demo')">Cancelar</button>
+          <button type="submit" class="btn btn--primary">Guardar Cambios</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Pestaña: Seguridad -->
+    <div id="tab-seguridad" class="tab-content">
+      <div class="section__head">
+        <h2>Seguridad</h2>
+        <p class="muted">Gestiona tu contraseña y configuración de seguridad</p>
+      </div>
+
+      <form class="form" onsubmit="alert('Contraseña cambiada - Demo'); return false;">
+        <label>Contraseña actual
+          <input type="password" value="••••••••" required>
+        </label>
+
+        <label>Nueva contraseña
+          <input type="password" value="nuevacontraseña" required minlength="6">
+          <div class="password-strength">
+            <div class="password-strength-bar"></div>
+          </div>
+          <small style="color: var(--primary);">Contraseña fuerte</small>
+        </label>
+
+        <label>Confirmar nueva contraseña
+          <input type="password" value="nuevacontraseña" required>
+          <small style="color: var(--primary);">✓ Las contraseñas coinciden</small>
+        </label>
+
+        <div class="form__actions">
+          <button type="submit" class="btn btn--primary">Cambiar Contraseña</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <div class="brand brand--footer">
+          <span class="brand__logo">⚽</span>
+          <span class="brand__text">Mundiales</span>
+        </div>
+        <p class="muted">Gestiona tu perfil y contenido personal</p>
+      </div>
+      <div class="footer__links">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#publicaciones">Publicaciones</a>
+        <a href="index.html#mundiales">Mundiales</a>
+        <a href="index.html">Cerrar Sesión</a>
+      </div>
+    </div>
+    <div class="container footer__legal">
+      <small>© 2025 Demo educativa.</small>
+    </div>
+  </footer>
+
+ <script src="perfil.js"></script>
+
+</body>
+</html>
